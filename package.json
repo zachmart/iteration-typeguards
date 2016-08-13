@@ -1,6 +1,6 @@
 {
   "name": "iteration-typeguards",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "typeguard functions to determine whether or not a value is iterable or an iterator in the ES6 sense",
   "main": "lib/index.js",
   "typings": "lib/index",
