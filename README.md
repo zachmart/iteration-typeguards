@@ -33,11 +33,14 @@ iterfaces: `Iterable<T>` and `Iterator<T>`, respectively.
 ```typescript
 import {isIterable} from "iteration-typeguards";
 
-isIterable(5);                                                            // false
-isIterable<string>("oh hai");                                             // true
-isIterable(null);                                                         // false
-isIterable([1,2,3]);                                                      // true
-isIterable(new Map<any,any>([["hi", 3], [{water: true}, "summer"]]))      // true
+isIterable(5);                                  // false
+isIterable<string>("oh hai");                   // true
+isIterable(null);                               // false
+isIterable([1,2,3]);                            // true
+isIterable(new Map<any,any>([
+  ["hi", 3],
+  [{water: true}, "summer"]]
+));                                             // true
 isIterable({
   [Symbol.iterator]: function() {
               return {
@@ -47,7 +50,7 @@ isIterable({
                 done: false
               }
             }
-});                                                                         // true
+});                                             // true
 ```
 
 ### isIterator
@@ -55,18 +58,18 @@ isIterable({
 ```typescript
 import {isIterator} from "iteration-typeguards";
 
-isIterator(5);                                                              // false
-isIterator<string>("oh hai");                                               // false
-isIterator<string>("oh hai"[Symbol.iterator]());                            // true
-isIterator(null);                                                           // false
-isIterator([1,2,3]);                                                        // false
-isIterator([1,2,3][Symbol.iterator]);                                       // true
+isIterator(5);                                  // false
+isIterator<string>("oh hai");                   // false
+isIterator<string>("oh hai"[Symbol.iterator]());// true
+isIterator(null);                               // false
+isIterator([1,2,3]);                            // false
+isIterator([1,2,3][Symbol.iterator]);           // true
 isIterator({
   next: function() {
     return 47;
   },
   done: false
-});                                                                         // true
+});                                             // true
 ```
 
 Usage without Typescript
@@ -78,8 +81,8 @@ above should work. The more traditional nodejs require statements shown below al
 ```javascript
 var itGuards = require("iteration-typeguards");
 
-itGuards.isIterable([1,2,3])                                                // true
-itGuards.isIterator([1,2,3][Symbol.iterator])                               // true
+itGuards.isIterable([1,2,3])                    // true
+itGuards.isIterator([1,2,3][Symbol.iterator])   // true
 ```
 
 Contributions
