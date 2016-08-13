@@ -1,0 +1,8 @@
+.idea/
+iteration-typeguards.iml
+src/
+**/node_modules/
+**/typings
+lib/test/
+tsconfig.json
+typings.json

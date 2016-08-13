@@ -1,0 +1,5 @@
+.idea/
+iteration-typeguards.iml
+lib/
+**/node_modules/
+**/typings/
