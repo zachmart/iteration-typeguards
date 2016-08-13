@@ -16,11 +16,17 @@ Requirements
 This module assumes a javascript environment implementing ES6, as it defines iterators and
 iterability based on the [ES6 iteration protocols](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols).
 
+Module Contents
+---------------
+This module consists of two typeguard functions, `isIterable` and `isIterator` that accept
+any javascript value as a single argument and return a boolean for whether or not that
+value is a `Iterable` or an `Iterator` in the ES6 sense, respectively.
+
 Usage with Typescript
 ---------------------
 A typescript compiler `--target` argument of `es6` should be used. Both of the functions
-isIterable and isIterator are defined as typescript typeguards for the built-in iterfaces:
-Iterable<T> and Iterator<T>, respectively.
+`isIterable` and `isIterator` are defined as typescript typeguards for the built-in
+iterfaces: `Iterable<T>` and `Iterator<T>`, respectively.
 
 ### isIterable
 
@@ -76,8 +82,8 @@ itGuards.isIterable([1,2,3])                                                // t
 itGuards.isIterator([1,2,3][Symbol.iterator])                               // true
 ```
 
-Contribution
-------------
+Contributions
+-------------
 If you come across a case in which these typeguards do not perform as expected, please
 submit an issue (outlining the case) or a pull request (again, outlining the case and a
 possible solution).
